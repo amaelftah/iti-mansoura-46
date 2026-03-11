@@ -18,7 +18,7 @@
                        <a class="text-lg font-semibold text-gray-900" href="#">ITI Blog Post</a>
                    </div>
                    <div class="ml-6 flex items-center space-x-4">
-                       <a class="px-3 py-2 text-sm font-medium text-gray-900 border-b-2 border-blue-500" href="#">All Posts</a>
+                       <a class="px-3 py-2 text-sm font-medium text-gray-900 border-b-2 border-blue-500" href="/posts">All Posts</a>
                    </div>
                </div>
                <div class="flex items-center">

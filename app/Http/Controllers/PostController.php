@@ -10,6 +10,7 @@ class PostController extends Controller
     {
         $posts = [
             [
+                'id' =>1,
                 'title' => 'first post',
                 'description' => 'some description',
                 'created_at' => '2026-03-11 10:00:00',
@@ -20,6 +21,7 @@ class PostController extends Controller
                 ]
             ],
             [
+                'id' =>2,
                 'title' => 'second post',
                 'description' => 'some description 2',
                 'created_at' => '2026-03-11 10:00:00',
@@ -30,6 +32,7 @@ class PostController extends Controller
                 ]
                 ],
                 [
+                    'id' =>3,
                     'title' => 'third post',
                     'description' => 'some description 2',
                     'created_at' => '2026-03-11 10:00:00',

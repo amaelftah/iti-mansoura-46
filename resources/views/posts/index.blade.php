@@ -18,7 +18,7 @@
                        <a class="text-lg font-semibold text-gray-900" href="#">ITI Blog Post</a>
                    </div>
                    <div class="ml-6 flex items-center space-x-4">
-                       <a class="px-3 py-2 text-sm font-medium text-gray-900 border-b-2 border-blue-500" href="#">All Posts</a>
+                       <a class="px-3 py-2 text-sm font-medium text-gray-900 border-b-2 border-blue-500" href="{{ route('posts.index') }}">All Posts</a>
                    </div>
                </div>
                <div class="flex items-center">
@@ -36,7 +36,7 @@
    <!-- Container -->
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
        <div class="text-center">
-           <a href="#" class="mt-4 px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+           <a href="{{ route('posts.create') }}" class="mt-4 px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                Create Post
            </a>
        </div>
@@ -63,7 +63,7 @@
                            <td class="px-4 py-2 whitespace-nowrap text-gray-700">{{$post['creator']['name']}}</td>
                            <td class="px-4 py-2 whitespace-nowrap text-gray-700">{{$post['created_at']}}</td>
                            <td class="px-4 py-2 whitespace-nowrap text-gray-700 space-x-2">
-                               <a href="#" class="inline-block px-4 py-1 text-xs font-medium text-white bg-blue-400 rounded hover:bg-blue-500">View</a>
+                               <a href="{{ route('posts.show', $post['id']) }}" class="inline-block px-4 py-1 text-xs font-medium text-white bg-blue-400 rounded hover:bg-blue-500">View</a>
                                <a href="#" class="inline-block px-4 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700">Edit</a>
                                <a href="#" class="inline-block px-4 py-1 text-xs font-medium text-white bg-red-600 rounded hover:bg-red-700">Delete</a>
                            </td>
