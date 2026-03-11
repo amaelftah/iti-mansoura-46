@@ -64,4 +64,9 @@ class PostController extends Controller
             'post' => $innerPost
         ]);
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
 }
