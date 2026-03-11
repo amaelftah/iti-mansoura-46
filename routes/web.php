@@ -7,6 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/all-posts',[PostController::class, 'allPosts']);
+Route::get('/posts',[PostController::class, 'index']);
 
-Route::get('/single-post', [PostController::class, 'singlePost']);
+Route::get('/posts/{post}', [PostController::class, 'show']);

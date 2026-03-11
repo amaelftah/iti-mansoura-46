@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function allPosts()
+    public function index()
     {
         $posts = [
             [
@@ -41,12 +41,12 @@ class PostController extends Controller
                 ]
         ];
     
-        return view('all-posts',[
+        return view('posts.index',[
             'posts' => $posts,
         ]);
     }
 
-    public function singlePost()
+    public function show()
     {
         $innerPost = [
             'title' => 'first post',
@@ -60,7 +60,7 @@ class PostController extends Controller
         ];
     
     
-        return view('single-post',[
+        return view('posts.show',[
             'post' => $innerPost
         ]);
     }
