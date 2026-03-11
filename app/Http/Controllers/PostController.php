@@ -75,6 +75,6 @@ class PostController extends Controller
 
     public function store()
     {
-        return 'we are in store action';
+        return to_route('posts.index');
     }
 }

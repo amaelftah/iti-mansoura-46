@@ -42,7 +42,7 @@
                </div>
               
                <div class="px-6 py-4">
-                   <form method="POST" action="/posts">
+                   <form method="POST" action="{{ route('posts.store') }}">
                     @csrf
                        <!-- Title Input -->
                        <div class="mb-4">
