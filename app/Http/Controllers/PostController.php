@@ -10,29 +10,29 @@ class PostController extends Controller
     public function index()
     {
         //select * from posts;
-        $posts = Post::all();
+        $posts = Post::all(); //Eloquent Collection
 
         return view('posts.index',[
             'posts' => $posts,
         ]);
     }
 
-    public function show()
+    public function show($id)
     {
-        $innerPost = [
-            'title' => 'first post',
-            'description' => 'some description',
-            'created_at' => '2026-03-11 10:00:00',
-            'creator' => [
-                'name' => 'Ahmed',
-                'email' => 'ahmed@gmail.com',
-                'created_at' => '2024-09-01 08:00:00'
-            ]
-        ];
-    
+        //select * from posts where id = $id LIMIT 1;
+        $post = Post::find($id); //App\Models\Post
+
+        // $anotherSyntax = Post::where('id', 1)->get(); //select * from posts where id = $id; //Eloquent Collection
+        // $thirdSyntax = Post::where('id', 1)->first(); //select * from posts where id = $id Limit 1;  //App\Models\Post
+        // dd($anotherSyntax, $thirdSyntax);
+
+        //select * from posts where title = 'first' and description = 'this is description';
+    //    $query = Post::where('title', 'first')
+    //                 ->where('description', ' this is description');
+    //    dd($query);
     
         return view('posts.show',[
-            'post' => $innerPost
+            'post' => $post
         ]);
     }
 

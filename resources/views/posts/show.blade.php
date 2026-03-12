@@ -25,13 +25,13 @@
             </div>
             <div class="px-4 py-4">
                 <div class="mb-2">
-                    <h3 class="text-lg font-medium text-gray-800">Name :- <span class="font-normal">{{ $post['creator']['name'] }}</span></h3>
+                    <h3 class="text-lg font-medium text-gray-800">Name :- <span class="font-normal">{{ $post?->creator?->name }}</span></h3>
                 </div>
                 <div class="mb-2">
-                    <h3 class="text-lg font-medium text-gray-800">Email :- <span class="font-normal">{{ $post['creator']['email'] }}</span></h3>
+                    <h3 class="text-lg font-medium text-gray-800">Email :- <span class="font-normal">{{ $post?->creator?->email }}</span></h3>
                 </div>
                 <div>
-                    <h3 class="text-lg font-medium text-gray-800">Created At :- <span class="font-normal">{{ $post['creator']['created_at'] }}</span></h3>
+                    <h3 class="text-lg font-medium text-gray-800">Created At :- <span class="font-normal">{{ $post?->creator?->created_at }}</span></h3>
                 </div>
             </div>
         </div>
