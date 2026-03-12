@@ -43,6 +43,23 @@ class PostController extends Controller
 
     public function store()
     {
+        $title = request()->title;
+        $description = request()->description;
+        
+        //First Syntax
+        // $post = new Post;
+
+        // $post->title = $title;
+        // $post->description = $description;
+ 
+        // $post->save();
+
+        //Second Syntax
+        Post::create([
+            'title' => $title,
+            'description' => $description,
+        ]);
+
         return to_route('posts.index');
     }
 }

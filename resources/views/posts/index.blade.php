@@ -27,7 +27,7 @@
                     @foreach($posts as $post)
                        <tr>
                         {{-- @dd($post, $post['title'], $post->title) --}}
-                           <td class="px-4 py-2 font-medium whitespace-nowrap text-gray-900">{{$post->title}}</td>
+                           <td class="px-4 py-2 font-medium whitespace-nowrap text-gray-900">{{$post->id}}</td>
                            <td class="px-4 py-2 whitespace-nowrap text-gray-700">{{$post->title}}</td>
                            <td class="px-4 py-2 whitespace-nowrap text-gray-700">{{$post?->creator?->name}}</td>
                            <td class="px-4 py-2 whitespace-nowrap text-gray-700">{{$post->created_at}}</td>
