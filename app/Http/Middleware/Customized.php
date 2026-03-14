@@ -16,7 +16,7 @@ class Customized
      */
     public function handle(Request $request, Closure $next): Response
     {
-        throw new Exception('you are not allowed');
+        // throw new Exception('you are not allowed');
         
 
         return $next($request);
