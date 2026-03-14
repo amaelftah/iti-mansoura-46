@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
+use App\Http\Requests\StorePostRequest;
 
 class PostController extends Controller
 {
@@ -46,8 +47,22 @@ class PostController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
+        // request()->validate([
+        //     'title' => ['required', 'min:3'],
+        //     'description' => ['required'],
+        // ],[
+        //     'title.required' => 'the title field is required by us!!!'
+        // ]);
+
+        // $request->validate([
+        //         'title' => ['required', 'min:3'],
+        //         'description' => ['required'],
+        //     ],[
+        //         'title.required' => 'the title field is required by us!!!'
+        // ]);
+
         $title = request()->title;
         $description = request()->description;
         $userId = request()->user_id;

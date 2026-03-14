@@ -10,12 +10,22 @@
             </div>
 
             <div class="px-6 py-4">
+                @if ($errors->any())
+                    <div class="mb-6">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li class="text-red-500">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form method="POST" action="{{ route('posts.store') }}">
                     @csrf
                     <div class="mb-4">
                         <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
                         <input
                             name="title"
+                            value="{{ old('title') }}"
                             type="text"
                             id="title"
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 py-2 px-3 border"
