@@ -6,17 +6,22 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
+use App\Http\Resources\PostResource;
 
 class PostController extends Controller
 {
     public function index()
     {
-        return Post::all();
+        $posts = Post::all();
+
+        return PostResource::collection($posts);
     }
 
     public function show($id)
     {
-        return Post::find($id);
+        $post = Post::find($id);
+
+        return new PostResource($post);
     }
 
     public function store(StorePostRequest $request)
@@ -31,6 +36,6 @@ class PostController extends Controller
             'user_id' => $userId,
         ]);
 
-        return $post;
+        return new PostResource($post);
     }
 }
